@@ -1,9 +1,12 @@
+process.env.NODE_ENV = 'test';
+
+
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var assert = require('assert');
 var should = chai.should();
-var server = require('../app');
-var knex = require('../db/knex');
+var server = require('../../app');
+var knex = require('../../db/knex');
 chai.use(chaiHttp);
 
 

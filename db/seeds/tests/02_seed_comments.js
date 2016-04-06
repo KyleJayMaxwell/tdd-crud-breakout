@@ -1,4 +1,4 @@
-var config = require('../knexfile')['development'];
+var config = require('../../../knexfile')['test'];
 var db = require('knex')(config);
 
 exports.seed = function(knex, Promise) {

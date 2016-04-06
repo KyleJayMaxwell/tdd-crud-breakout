@@ -1,9 +1,12 @@
+process.env.NODE_ENV = 'test';
+
+
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var assert = require('assert');
 var should = chai.should();
-var server = require('../app');
-var knex = require('../db/knex');
+var server = require('../../app');
+var knex = require('../../db/knex');
 chai.use(chaiHttp);
 
 
@@ -23,7 +26,7 @@ describe('Posts CRUD Routes', function() {
       done();
     });
   });
-  xit('should POST a SINGLE post to /posts', function(done) {
+  it('should POST a SINGLE post to /posts', function(done) {
     var thePost = {
       'author': 'J.D Salinger',
       'body': 'I like it when somebody gets ecited about something. It\'s nice.'
@@ -38,7 +41,7 @@ describe('Posts CRUD Routes', function() {
         done();
       });
     });
-  xit('should GET a SINGLE post from /posts/:id', function(done) {
+  it('should GET a SINGLE post from /posts/:id', function(done) {
     chai.request(server)
       .get('/posts')
       .end(function (err, res) {

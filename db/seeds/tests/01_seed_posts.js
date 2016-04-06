@@ -1,6 +1,7 @@
 
 exports.seed = function(knex, Promise) {
   return Promise.join(
+    knex('comments').del(),
     knex('posts').del(),
 
     knex('posts').insert({
